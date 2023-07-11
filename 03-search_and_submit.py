@@ -13,8 +13,9 @@ try:
     # We will wait up to 10 seconds for the page loading process
     element = WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.ID, "search-form-1")))
-    
+
     search_xpath = driver.find_element('xpath', '//*[@id="search-form-1"]')
+    search_xpath.clear() # clear the textbox
     search_xpath.send_keys("docker")
     search_xpath.send_keys(Keys.RETURN)
     time.sleep(20)
